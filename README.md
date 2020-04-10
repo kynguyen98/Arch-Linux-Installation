@@ -52,6 +52,18 @@ genfstab -U /mnt >> /mnt/etc/fstab
 ```
 arch-chroot /mnt
 ```
+# Time zone 
+Set the **time zone***
+```
+ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
+```
+Run **hwclock** to generate ```/etc/localtime```
+# Localization
+Uncomment ```en_US-UTF-8 YTF-8``` in ```/etc/locale.gen```, and generate them with:
+```locale-gen
+```
+
+
 
 
 
