@@ -39,7 +39,9 @@ vim /etc/pacman.d/mirrorlist
 ```
 choose your closet mirrors
 ## Install essential packages
+```bash
 pacstrap /mnt base base-del linux linux-firmware sudo vim grub os-prober netctl dialog wpa_supplicant dhcpcd ppp
+```
 
 
 
