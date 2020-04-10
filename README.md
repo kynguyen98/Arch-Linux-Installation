@@ -9,60 +9,62 @@ To check the service status, use
 ```bash
 cfdisk
 ```
-```
+```bash
 fdisk -l
 ``` 
 for checking list disk
 ## Format the partitions
-```mkfs.ext4 /dev/sdX1
+``` bash
+mkfs.ext4 /dev/sdX1
 ```
 for home and base system
-```
+```bash
 hmkswap /dev/sdX2 
 ```
 for swap partition
 
 ## Mounting the file systems
-```
+```bash
 mount /dev/sdX1 /mnt 
 ```
 for base system
-```
+```bash
 mount /dev/sdX2 /mnt/home
 ```
 for home partition
 # Installation
 ## Select mirrors
-```
+```bash
 vim /etc/pacman.d/mirrorlist
 ```
 choose your closet mirrors
 ## Install essential packages
-```
+```bash
 pacstrap /mnt base base-del linux linux-firmware ntfs-3g sudo vim grub os-prober netctl dialog wpa_supplicant dhcpcd ppp
 ```
 # Configure the system
 ## Fstab 
 Generate an **fstab** file use -U 
-```
+```bash
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 ## Chroot
 **Change root** into the new system
-```
+```bash
 arch-chroot /mnt
 ```
 # Time zone 
 Set the **time zone***
-```
+```bash
 ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
 ```
 Run **hwclock** to generate ```/etc/localtime```
-```hwclock --systohc
+``` bash
+hwclock --systohc
 ```
 # Localization
 Uncomment ```en_US-UTF-8 YTF-8``` in ```/etc/locale.gen```, and generate them with:
-```
+```bash
 locale-gen
 ```
 Create the **locale.conf** file, and set the LANG ***variable*** accordingly:
@@ -85,37 +87,35 @@ Add matching entries to **hosts(5)**:
 ```
 
 # Initramfs
-```
+```bash
 mkinitcpio -P
 ```
 # Root password
 Set the root **password:**
-```
+```bash
 passwd
 ```
 # Add non root user
-```
+```bash
 useradd -m john
 ```
-```
+```bash
 usermod -aG wheel,audio,video,optical,power,storage john
 ```
 # Boot loader
-```
+```bash
 grub-install --target=i386-pc /dev/sdX
 ```
 # Generating grub config file
-```
+```bash
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 # Network configuration
-```
 Start Netctl service
-```
-```
+```bash
 sudo systemctl start netctl
 ```
-```
+```bash
 sudo systemctl netctl-auto@wls3.service
 ```
 
