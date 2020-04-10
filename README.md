@@ -39,7 +39,7 @@ vim /etc/pacman.d/mirrorlist
 choose your closet mirrors
 ## Install essential packages
 ```
-pacstrap /mnt base base-del linux linux-firmware sudo vim grub os-prober netctl dialog wpa_supplicant dhcpcd ppp
+pacstrap /mnt base base-del linux linux-firmware ntfs-3g sudo vim grub os-prober netctl dialog wpa_supplicant dhcpcd ppp
 ```
 # Configure the system
 ## Fstab 
@@ -76,6 +76,40 @@ Create the **hostname** file:
 /etc/hostname
 myhostname
 ```
+Add matching entries to **hosts(5)**:
+```bash
+/etc/hosts
+127.0.0.1	localhost
+::1		localhost
+127.0.1.1	myhostname.localdomain	myhostname
+```
+
+# Initramfs
+```
+mkinitcpio -P
+```
+# Root password
+Set the root **password:**
+```
+passwd
+```
+# Add non root user
+```
+useradd -m john
+```
+```
+usermod -aG wheel,audio,video,optical,power,storage john
+```
+# Boot loader
+```
+grub-install --target=i386-pc /dev/sdX
+```
+# Generating grub config file
+```
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+
 
 
 
