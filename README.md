@@ -65,6 +65,17 @@ Uncomment ```en_US-UTF-8 YTF-8``` in ```/etc/locale.gen```, and generate them wi
 ```
 locale-gen
 ```
+Create the **locale.conf** file, and set the LANG ***variable*** accordingly:
+```
+/etc/locale.conf
+LANG=en_US.UTF-8
+```
+# Network configuration
+Create the **hostname** file:
+```
+/etc/hostname
+myhostname
+```
 
 
 
