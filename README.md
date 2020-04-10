@@ -43,12 +43,12 @@ pacstrap /mnt base base-del linux linux-firmware sudo vim grub os-prober netctl 
 ```
 # Configure the system
 ## Fstab 
-Generate an *fstab* file use -U 
+Generate an **fstab** file use -U 
 ```
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 ## Chroot
-* Change root * into the new system
+**Change root** into the new system
 ```
 arch-chroot /mnt
 ```
