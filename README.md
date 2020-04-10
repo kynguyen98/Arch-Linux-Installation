@@ -109,13 +109,15 @@ grub-install --target=i386-pc /dev/sdX
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 # Network configuration
+```
 Start Netctl service
+```
 ```
 sudo systemctl start netctl
 ```
 ```
 sudo systemctl netctl-auto@wls3.service
-
+```
 
 
 
