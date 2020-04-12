@@ -40,7 +40,7 @@ vim /etc/pacman.d/mirrorlist
 choose your closet mirrors
 ## Install essential packages
 ```bash
-pacstrap /mnt base base-del linux linux-firmware ntfs-3g sudo vim grub os-prober netctl dialog wpa_supplicant dhcpcd ppp
+pacstrap /mnt base base-devel linux linux-firmware ntfs-3g sudo vim grub os-prober netctl dialog wpa_supplicant dhcpcd ppp
 ```
 # Configure the system
 ## Fstab 
