@@ -37,6 +37,10 @@ for home partition
 ```bash
 vim /etc/pacman.d/mirrorlist
 ```
+## On Manjaro linux when installing Arch on USB or ext. HDD
+```bash
+sudo pacman-mirrors -g
+```
 choose your closet mirrors
 ## Install essential packages
 ```bash
