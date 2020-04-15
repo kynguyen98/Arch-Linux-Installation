@@ -37,10 +37,14 @@ for home partition
 ```bash
 vim /etc/pacman.d/mirrorlist
 ```
+## On Manjaro linux when installing Arch on USB or ext. HDD
+```bash
+sudo pacman-mirrors -g
+```
 choose your closet mirrors
 ## Install essential packages
 ```bash
-pacstrap /mnt base base-del linux linux-firmware ntfs-3g sudo vim grub os-prober netctl dialog wpa_supplicant dhcpcd ppp
+pacstrap /mnt base base-devel linux linux-firmware ntfs-3g sudo vim grub os-prober netctl dialog wpa_supplicant dhcpcd ppp
 ```
 # Configure the system
 ## Fstab 
