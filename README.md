@@ -48,6 +48,13 @@ Generate an **fstab** file use -U
 ```bash
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
+## Edit the sudoers file
+Enable user in the wheel group to have sudo access by uncommenting this line ```# %wheel ALL=(ALL) ALL```
+## Export vim as editor
+```
+ln -s /usr/bin/vim /usr/bin/vi
+```
+
 ## Chroot
 **Change root** into the new system
 ```bash
