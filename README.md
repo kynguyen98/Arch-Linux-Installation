@@ -19,7 +19,7 @@ mkfs.ext4 /dev/sdX1
 ```
 for home and base system
 ```bash
-hmkswap /dev/sdX2 
+mkswap /dev/sdX2 
 ```
 for swap partition
 
