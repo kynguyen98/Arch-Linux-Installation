@@ -117,17 +117,32 @@ usermod -aG wheel,audio,video,optical,power,storage john
 ```bash
 grub-install --target=i386-pc /dev/sdX
 ```
+## External device
+If you are planning to install Arch Linix on an external disk then put the *--removable* flag to the grub command on top
 # Generating grub config file
 ```bash
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 # Network configuration
-Start Netctl service
+## Start Netctl service
 ```bash
 sudo systemctl start netctl
 ```
+## Enabling a profile
 ```bash
-sudo systemctl netctl-auto@wls3.service
+netctl enable profile
+```
+To enable profile at boot 
+```bash
+netctl start profile
+```
+## Automatically connect wifi as we roaming
+```bash
+sudo systemctl enable netctl-auto@interface.service
+```
+To enable at boot
+```bash
+sudo systemctl start netctl-auto@interface.service
 ```
 
 
