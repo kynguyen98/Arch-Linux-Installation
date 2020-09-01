@@ -128,14 +128,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ```bash
 sudo systemctl start netctl
 ```
-## Enabling a profile
-```bash
-netctl enable profile
-```
-To enable profile at boot 
-```bash
-netctl start profile
-```
 ## Automatically connect wifi as we roaming
 ```bash
 sudo systemctl enable netctl-auto@interface.service
